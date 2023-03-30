@@ -1,5 +1,6 @@
-let myLibrary = [];
+let myLibrary = [{book:"Halo", author:"moha", pages:1000, read:"Not Read"}];
 
+const library = document.getElementById("library");
 const add = document.getElementById("add");
 add.addEventListener("click", addBookToLibrary);
 
@@ -24,5 +25,4 @@ function addBookToLibrary() {
 
 	const newBook = new Book(book, author, pages, read);
 	myLibrary.push(newBook);
-	console.log(myLibrary);
 }
