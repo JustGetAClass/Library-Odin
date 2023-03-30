@@ -8,7 +8,22 @@
 		<title>Library</title>
 	</head>
 	<body>
-		<h1>Hello</h1>
+		<h1>Library</h1>
+		<div id="library">
+			<!-- Library will be rendered here -->
+		</div>
+			<label for="book">Book</label>
+			<input type="text" name="book" id="book" />
+			<label for="author">Author</label>
+			<input type="text" name="author" id="author" />
+			<label for="pages">Pages</label>
+			<input type="number" name="pages" id="pages" />
+			<label for="read">Have you read it?</label>
+			<select name="read" id="read">
+				<option value="Read">Yeah i have read it</option>
+				<option value="Not Read">Nope i have not read it</option>
+			</select>
+			<button id="add">Add</button>
 		<script src="app.js"></script>
 	</body>
 </html>
