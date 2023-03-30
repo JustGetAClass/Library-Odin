@@ -26,3 +26,4 @@ function addBookToLibrary() {
 	const newBook = new Book(book, author, pages, read);
 	myLibrary.push(newBook);
 }
+// use array.find()
