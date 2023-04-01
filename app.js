@@ -38,12 +38,19 @@ function displayBooks() {
 		const bookDiv = document.createElement("div");
 		bookDiv.classList.add("book");
 		bookDiv.innerHTML = `
+				<div class="card-header">
 				<h3>${book.book}</h3>
 				<p>Author: ${book.author}</p>
+				</div>
+				<hr>
+				<div class="card-body">
 				<p>Pages: ${book.pages}</p>
 				<p>Status: ${book.read ? "Read" : "Not Read"}</p>
-				<button class="remove" onclick="removeBook(${index})">Remove</button>
-				<button class="read" onclick="readBook(${index})">Read</button>
+				<div class="cardButtons">
+					<button class="remove" onclick="removeBook(${index})">Remove</button>
+					<button class="read" onclick="readBook(${index})">Read/Unread</button>
+				</div>
+				</div>
 			`;
 		library.appendChild(bookDiv);
 	});
