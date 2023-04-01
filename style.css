@@ -2,10 +2,11 @@ h1 {
 	color: red;
 	text-align: center;
 }
-.form {
+
+body{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	gap: 10px;
 }
 
@@ -19,6 +20,20 @@ h1 {
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #888888;
 	text-align: center;
+}
+
+#big {
+	width: 100px;
+	height: 50px;
+	align-self: center;
+}
+
+#form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
 }
 
 #library {

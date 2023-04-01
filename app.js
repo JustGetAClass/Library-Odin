@@ -1,8 +1,19 @@
 let myLibrary = [];
 
+const big = document.getElementById("big");
+const form = document.getElementById("form");
 const library = document.getElementById("library");
 const add = document.getElementById("add");
+
 add.addEventListener("click", addBookToLibrary);
+
+big.addEventListener("click", () => {
+	form.style.display = "flex";
+});
+
+function closeForm() {
+	form.style.display = "none";
+}
 
 function Book(book, author, pages, read) {
 	this.book = book;

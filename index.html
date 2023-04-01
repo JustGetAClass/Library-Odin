@@ -9,7 +9,8 @@
 	</head>
 	<body>
 		<h1>Library</h1>
-		<div class="form">
+		<button id="big">Add Book</button>
+		<div id="form" style="display: none">
 			<label for="book">Book</label>
 			<input type="text" name="book" id="book" />
 			<label for="author">Author</label>
@@ -21,7 +22,10 @@
 				<option value="Read">Yeah i have read it</option>
 				<option value="Not Read">Nope i have not read it</option>
 			</select>
-			<button id="add">Add</button>
+			<div class="formbtns">
+				<button id="add">Add</button>
+				<button id="close" onclick="closeForm()">X</button>
+			</div>
 		</div>
 		<div id="library">
 			<!-- Library will be rendered here -->
