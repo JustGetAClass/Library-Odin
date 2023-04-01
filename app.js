@@ -31,7 +31,6 @@ function addBookToLibrary() {
 	myLibrary.push(newBook);
 	displayBooks();
 }
-// use array.find()
 
 function displayBooks() {
 	library.innerHTML = "";
