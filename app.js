@@ -1,4 +1,5 @@
 let myLibrary = [{book:"Halo", author:"moha", pages:1000, read:"Not Read"}];
+let displayedBooks = [];
 
 const library = document.getElementById("library");
 const add = document.getElementById("add");
@@ -25,5 +26,28 @@ function addBookToLibrary() {
 
 	const newBook = new Book(book, author, pages, read);
 	myLibrary.push(newBook);
+	displayBooks();
 }
 // use array.find()
+
+function displayBooks() {
+	if (myLibrary.length === 0) {
+		return;
+	}
+	myLibrary.forEach((book) => {
+		if(displayedBooks.includes(book)) {
+			return;
+		} else {
+			displayedBooks.push(book);
+			const bookDiv = document.createElement("div");
+			bookDiv.classList.add("book");
+			bookDiv.innerHTML = `
+				<h3>${book.book}</h3>
+				<p>Author: ${book.author}</p>
+				<p>Pages: ${book.pages}</p>
+				<p>Read: ${book.read}</p>
+			`;
+			library.appendChild(bookDiv);
+		}
+	});
+}
