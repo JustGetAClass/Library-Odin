@@ -1,5 +1,4 @@
-let myLibrary = [{book:"Halo", author:"moha", pages:1000, read:"Not Read"}];
-let displayedBooks = [];
+let myLibrary = [];
 
 const library = document.getElementById("library");
 const add = document.getElementById("add");
@@ -11,6 +10,10 @@ function Book(book, author, pages, read) {
 	this.pages = pages;
 	this.read = read;
 }
+
+Book.prototype.toggleRead = function () {
+	this.read = !this.read;
+};
 
 function addBookToLibrary() {
 	const book = document.getElementById("book").value;
@@ -31,23 +34,28 @@ function addBookToLibrary() {
 // use array.find()
 
 function displayBooks() {
-	if (myLibrary.length === 0) {
-		return;
-	}
-	myLibrary.forEach((book) => {
-		if(displayedBooks.includes(book)) {
-			return;
-		} else {
-			displayedBooks.push(book);
-			const bookDiv = document.createElement("div");
-			bookDiv.classList.add("book");
-			bookDiv.innerHTML = `
+	library.innerHTML = "";
+	myLibrary.forEach((book, index) => {
+		const bookDiv = document.createElement("div");
+		bookDiv.classList.add("book");
+		bookDiv.innerHTML = `
 				<h3>${book.book}</h3>
 				<p>Author: ${book.author}</p>
 				<p>Pages: ${book.pages}</p>
-				<p>Read: ${book.read}</p>
+				<p>Status: ${book.read ? "Read" : "Not Read"}</p>
+				<button class="remove" onclick="removeBook(${index})">Remove</button>
+				<button class="read" onclick="readBook(${index})">Read</button>
 			`;
-			library.appendChild(bookDiv);
-		}
+		library.appendChild(bookDiv);
 	});
+}
+
+function removeBook(index) {
+	myLibrary.splice(index, 1);
+	displayBooks();
+}
+
+function readBook(index) {
+	myLibrary[index].toggleRead();
+	displayBooks();
 }

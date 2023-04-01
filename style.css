@@ -1,3 +1,30 @@
 h1{
     color: red;
+    text-align: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.book{
+    width : 200px;
+    height : 200px;
+    background-color : #ccc;
+    margin : 10px;
+    padding : 10px;
+    border : 1px solid black;
+    border-radius : 10px;
+    box-shadow : 5px 5px 5px #888888;
+    text-align: center;
+}
+
+#library{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
